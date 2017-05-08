@@ -6,11 +6,11 @@
  * Time: 10:22
  */
 
-DEFINE ("DB_USER", "contagio_blog");
-DEFINE ("DB_PASSWORD", 'TB0#i5rNtl6b');
-DEFINE ("DB_HOST", "blog.deathwishgame.co.uk");
-DEFINE ("DB_NAME", "contagio_blog");
-DEFINE ("DB_PORT", "3306");
+DEFINE ("DB_USER", "");
+DEFINE ("DB_PASSWORD", '');
+DEFINE ("DB_HOST", "");
+DEFINE ("DB_NAME", "");
+DEFINE ("DB_PORT", "");
 
 $dsn = 'mysql:dbname='.DB_NAME.';port='.DB_PORT.';host='.DB_HOST;
 try {
