@@ -24,7 +24,14 @@ export class AppComponent {
     getData() {
         console.log("HTTP GET");
         this.http.get('assets/fileService.php')
-            .subscribe(res => this.blogPosts = res.json())
+            .subscribe(res => this.parsePosts(res.json()))
+    }
+
+    parsePosts(posts) {
+        this.blogPosts = posts;
+        // for(let i=0; i<this.blogPosts.length; i++) {
+        //     this.blogPosts[i].content = this.blogPosts[i].content.replace(new RegExp('\n', 'g'), "<br />")
+        // }
     }
 
     setData() {
