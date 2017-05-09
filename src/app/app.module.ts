@@ -6,12 +6,10 @@ import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {MdButtonModule, MdCardModule, MdInputModule, MdToolbarModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { Nl2brPipe } from './nl2br.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
-        Nl2brPipe
     ],
     imports: [
         BrowserModule,

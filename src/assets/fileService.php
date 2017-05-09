@@ -10,7 +10,9 @@ $_POST = json_decode($postdata, true);
 
 require_once dirname(__FILE__).'/dbaccess.php';
 
-if(!empty($_POST)) {
+session_start();
+if(!empty($_POST) && !empty($_SESSION['loggedIn'])) {
+
     $params = array();
     $query = 'INSERT INTO posts (title, content, rating) VALUES (:title, :content, :rating)';
     $params[':title'] = $_POST['title'];
