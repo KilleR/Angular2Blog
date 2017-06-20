@@ -23,7 +23,7 @@ if(!empty($_POST) && !empty($_SESSION['loggedIn'])) {
     unset($query, $params);
 }
 
-$query = 'SELECT title, content, rating, createtime FROM posts ORDER BY createtime ASC';
+$query = 'SELECT title, content, rating, createtime FROM posts ORDER BY createtime DESC';
 $result = PDOexecute_select($query, array());
 
 $assets = [];
