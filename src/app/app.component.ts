@@ -18,14 +18,13 @@ export class AppComponent {
         this.loggedIn = false;
     }
 
-    title = 'Angular Blog!';
+    title = 'Angular 2 Dev Blog!';
 
     ngOnInit() {
         this.getData();
     }
 
     getData() {
-        console.log("HTTP GET");
         this.http.get('assets/fileService.php')
             .subscribe(res => this.parsePosts(res.json()))
     }
@@ -43,9 +42,11 @@ export class AppComponent {
     }
 
     addPost() {
-        console.log(this.newPost);
         this.http.post('assets/fileService.php', this.newPost)
-            .subscribe(res => this.blogPosts = res.json())
+            .subscribe(res => {
+                this.blogPosts = res.json();
+                this.newPost = new Post();
+            })
     }
 
     doLogin(event) {
@@ -54,10 +55,8 @@ export class AppComponent {
             .subscribe(res => this.checkLogin(res.json()))
     }
     checkLogin(res) {
-        console.log(res);
         this.loginField = '';
         if(typeof res.loggedIn != "undefined") {
-            console.log("Logged IN");
             this.loggedIn = true;
         }
     }

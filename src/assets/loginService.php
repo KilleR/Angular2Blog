@@ -32,7 +32,6 @@ if ($_SESSION['loginString'] == LOGIN_SEQUENCE) {
 $output = array();
 
 $output['loginField'] = $_POST['loginField'];
-$output['loginString'] = $_SESSION['loginString'];
 if(!empty($_SESSION['loggedIn'])) {
     $output['loggedIn'] = true;
 }
