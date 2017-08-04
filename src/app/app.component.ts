@@ -31,6 +31,7 @@ export class AppComponent {
 
     getData() {
         this.loadingBarMode = 'indeterminate';
+        this.loadingBarShow = true;
         this.http.get('assets/fileService.php')
             .subscribe(res => {
                 this.loadingBarMode = 'query';

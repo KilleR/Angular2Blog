@@ -1,7 +1,7 @@
 <md-toolbar color="primary">
     <span>{{title}}</span>
     <span class="spacer"></span>
-    <button md-icon-button><md-icon>refresh</md-icon></button>
+    <button md-icon-button (click)="getData()"><md-icon>refresh</md-icon></button>
 </md-toolbar>
 
 <md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
@@ -26,19 +26,7 @@
             <button type="submit" md-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
     </form>
 
-    <md-card class="post">
-        <md-toolbar>
-            {{newPost.title}}: {{newPost.createtime}}
-        </md-toolbar>
-        <md-card-header color="primary">
-            <md-card-title></md-card-title>
-            <md-card-subtitle>Rating: {{newPost.rating}}</md-card-subtitle>
-        </md-card-header>
-
-        <md-card-content class="post-content">
-            <p>{{newPost.content}}</p>
-        </md-card-content>
-    </md-card>
+    <blog-post [post]="newPost"></blog-post>
 </div>
 
 
