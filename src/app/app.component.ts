@@ -12,11 +12,16 @@ export class AppComponent {
     private newPost: Post;
     private loggedIn: boolean;
     private loginField: string;
+    private loadingBarMode: string;
+    private loadingBarShow: boolean;
 
     constructor(private http:Http) {
         this.newPost = new Post();
         this.loggedIn = false;
+        this.loadingBarShow = false;
+        this.loadingBarMode = 'indeterminate';
     }
+
 
     title = 'Angular 2 Dev Blog!';
 
@@ -25,8 +30,13 @@ export class AppComponent {
     }
 
     getData() {
+        this.loadingBarMode = 'indeterminate';
         this.http.get('assets/fileService.php')
-            .subscribe(res => this.parsePosts(res.json()))
+            .subscribe(res => {
+                this.loadingBarMode = 'query';
+                this.parsePosts(res.json());
+                this.loadingBarShow = false;
+            })
     }
 
     parsePosts(posts) {

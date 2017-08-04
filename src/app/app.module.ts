@@ -4,12 +4,17 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
-import {MdButtonModule, MdCardModule, MdInputModule, MdToolbarModule} from "@angular/material";
+import {
+    MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdProgressBarModule,
+    MdToolbarModule
+} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {PostComponent} from './post/post.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        PostComponent,
     ],
     imports: [
         BrowserModule,
@@ -19,7 +24,9 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         MdToolbarModule,
         MdButtonModule,
         MdInputModule,
-        MdCardModule
+        MdCardModule,
+        MdProgressBarModule,
+        MdIconModule
     ],
     providers: [],
     bootstrap: [AppComponent]

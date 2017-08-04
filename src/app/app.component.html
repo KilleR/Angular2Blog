@@ -1,6 +1,10 @@
 <md-toolbar color="primary">
-    {{title}}
+    <span>{{title}}</span>
+    <span class="spacer"></span>
+    <button md-icon-button><md-icon>refresh</md-icon></button>
 </md-toolbar>
+
+<md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
 
 <div [hidden]="loggedIn">
     <md-input-container class="input-full-width">
@@ -38,13 +42,4 @@
 </div>
 
 
-<md-card *ngFor="let post of blogPosts" class="post">
-    <md-card-title>{{post.title}}</md-card-title>
-    <md-card-header>
-        <md-card-title>{{post.createtime}}</md-card-title>
-        <md-card-subtitle>Rating: {{post.rating}}</md-card-subtitle>
-    </md-card-header>
-    <md-card-content class="post-content">
-        <p>{{post.content}}</p>
-    </md-card-content>
-</md-card>
+<blog-post *ngFor="let post of blogPosts" [post]=post></blog-post>
