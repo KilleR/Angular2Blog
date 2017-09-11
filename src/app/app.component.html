@@ -1,33 +1,41 @@
-<md-toolbar color="primary">
-    <span>{{title}}</span>
-    <span class="spacer"></span>
-    <button md-icon-button (click)="getData()"><md-icon>refresh</md-icon></button>
-</md-toolbar>
+<md-sidenav-container class="sidenav-container-fill">
+    <md-sidenav #sidenav mode="side" >
+        Drawer Content
+    </md-sidenav>
+    <md-toolbar color="primary" style="display:flex">
+        <button md-icon-button (click)="sidenav.toggle()"><md-icon>menu</md-icon></button>
+        <span>{{title}}</span>
+        <span class="spacer"></span>
+        <button md-icon-button (click)="getData()"><md-icon>refresh</md-icon></button>
+    </md-toolbar>
 
-<md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
+    <md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
 
-<div [hidden]="loggedIn">
-    <md-input-container class="input-full-width">
-        <input mdInput [ngModel]="loginField" (ngModelChange)="doLogin($event)" />
-    </md-input-container>
-</div>
-
-<div [hidden]="!loggedIn">
-    <form class="post-form" (submit)="addPost()" #postForm="ngForm">
+    <div class="sidenav-content">
+        <div [hidden]="loggedIn">
             <md-input-container class="input-full-width">
-                <input mdInput [(ngModel)]="newPost.title" name="title" placeholder="Title" required />
+                <input mdInput [ngModel]="loginField" (ngModelChange)="doLogin($event)" />
             </md-input-container>
-            <md-input-container class="input-full-width">
-                <textarea mdInput mdTextareaAutosize [(ngModel)]="newPost.content" name="content" placeholder="Post New Update" required></textarea>
-            </md-input-container>
-            <md-input-container class="input-full-width">
-                <input mdInput type="number" name="rating"[(ngModel)]="newPost.rating" name="rating" placeholder="Rate the day" required/>
-            </md-input-container>
-            <button type="submit" md-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
-    </form>
-
-    <blog-post [post]="newPost"></blog-post>
-</div>
-
-
-<blog-post *ngFor="let post of blogPosts" [post]=post></blog-post>
+        </div>
+    
+        <div [hidden]="!loggedIn">
+            <form class="post-form" (submit)="addPost()" #postForm="ngForm">
+                    <md-input-container class="input-full-width">
+                        <input mdInput [(ngModel)]="newPost.title" name="title" placeholder="Title" required />
+                    </md-input-container>
+                    <md-input-container class="input-full-width">
+                        <textarea mdInput mdTextareaAutosize [(ngModel)]="newPost.content" name="content" placeholder="Post New Update" required></textarea>
+                    </md-input-container>
+                    <md-input-container class="input-full-width">
+                        <input mdInput type="number" name="rating"[(ngModel)]="newPost.rating" name="rating" placeholder="Rate the day" required/>
+                    </md-input-container>
+                    <button type="submit" md-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
+            </form>
+    
+            <blog-post [post]="newPost"></blog-post>
+        </div>
+    
+    
+        <blog-post *ngFor="let post of blogPosts" [post]=post></blog-post>
+    </div>
+</md-sidenav-container>

@@ -5,7 +5,7 @@ import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
 import {
-    MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdProgressBarModule,
+    MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdProgressBarModule, MdSidenavModule,
     MdToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -26,7 +26,9 @@ import {PostComponent} from './post/post.component';
         MdInputModule,
         MdCardModule,
         MdProgressBarModule,
-        MdIconModule
+        MdIconModule,
+        MdSidenavModule,
+
     ],
     providers: [],
     bootstrap: [AppComponent]
