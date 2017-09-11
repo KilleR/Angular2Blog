@@ -11,13 +11,15 @@
 
     <md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
 
+    <router-outlet></router-outlet>
+
     <div class="sidenav-content">
         <div [hidden]="loggedIn">
             <md-input-container class="input-full-width">
                 <input mdInput [ngModel]="loginField" (ngModelChange)="doLogin($event)" />
             </md-input-container>
         </div>
-    
+
         <div [hidden]="!loggedIn">
             <form class="post-form" (submit)="addPost()" #postForm="ngForm">
                     <md-input-container class="input-full-width">
@@ -31,11 +33,11 @@
                     </md-input-container>
                     <button type="submit" md-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
             </form>
-    
+
             <blog-post [post]="newPost"></blog-post>
         </div>
-    
-    
+
+
         <blog-post *ngFor="let post of blogPosts" [post]=post></blog-post>
     </div>
 </md-sidenav-container>
