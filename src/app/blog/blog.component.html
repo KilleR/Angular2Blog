@@ -1,3 +1,25 @@
-<p>
-  blog works!
-</p>
+  <div [hidden]="loggedIn">
+    <md-input-container class="input-full-width">
+      <input mdInput [ngModel]="loginField" (ngModelChange)="doLogin($event)" />
+    </md-input-container>
+  </div>
+
+  <div [hidden]="!loggedIn">
+    <form class="post-form" (submit)="addPost()" #postForm="ngForm">
+      <md-input-container class="input-full-width">
+        <input mdInput [(ngModel)]="newPost.title" name="title" placeholder="Title" required />
+      </md-input-container>
+      <md-input-container class="input-full-width">
+        <textarea mdInput mdTextareaAutosize [(ngModel)]="newPost.content" name="content" placeholder="Post New Update" required></textarea>
+      </md-input-container>
+      <md-input-container class="input-full-width">
+        <input mdInput type="number" name="rating"[(ngModel)]="newPost.rating" name="rating" placeholder="Rate the day" required/>
+      </md-input-container>
+      <button type="submit" md-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
+    </form>
+
+    <blog-post [post]="newPost"></blog-post>
+  </div>
+
+
+  <blog-post *ngFor="let post of blogPosts" [post]=post></blog-post>
