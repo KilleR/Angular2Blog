@@ -1,3 +1,14 @@
-<div class="sidenav-content">
-    Dashboard
-</div>
+<md-card>
+    <md-toolbar>
+        <span>Army Tools</span>
+        <div class="spacer"></div>
+        <span>{{army.total}}</span>
+    </md-toolbar>
+</md-card>
+
+<md-card>
+    <md-card-content>
+        <button md-button (click)="getArmyList('tau')">Fetch</button>
+        <span *ngIf="armyList && armyList.hq">{{armyList.hq}}</span>
+    </md-card-content>
+</md-card>

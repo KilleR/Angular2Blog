@@ -6,12 +6,14 @@ import {PageNotFoundComponent} from "../page-not-found/page-not-found.component"
 
 const routes: Routes = [
     {
-        path: 'blog',
+        path: 'army',
         component: DashboardComponent,
+        data: {title: "Army Builder"}
     },
     {
         path: '',
         component: BlogComponent,
+        data: {title: "Dev Blog"}
     },
     { path: '**', component: PageNotFoundComponent }
 
@@ -19,7 +21,7 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(routes, {enableTracing: true})
+        RouterModule.forRoot(routes)
     ],
     exports: [
         RouterModule

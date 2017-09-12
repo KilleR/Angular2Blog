@@ -5,7 +5,7 @@ import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
 import {
-    MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdProgressBarModule, MdSidenavModule,
+    MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdListModule, MdProgressBarModule, MdSidenavModule,
     MdToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -36,7 +36,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         MdProgressBarModule,
         MdIconModule,
         MdSidenavModule,
-
+        MdListModule
     ],
     providers: [],
     bootstrap: [AppComponent]
