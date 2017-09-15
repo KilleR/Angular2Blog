@@ -2,13 +2,92 @@
     <md-toolbar>
         <span>Army Tools</span>
         <div class="spacer"></div>
-        <span>{{army.total}}</span>
+        <span>{{army.cost}}</span>
     </md-toolbar>
+    <md-select [(ngModel)]="armyList" placeholder="Select Army" floatPlaceholder="never">
+        <md-option *ngFor="let list of armyLists" [value]="list">
+            {{list.Name}}
+        </md-option>
+    </md-select>
 </md-card>
 
-<md-card>
-    <md-card-content>
-        <button md-button (click)="getArmyList('tau')">Fetch</button>
-        <span *ngIf="armyList && armyList.hq">{{armyList.hq}}</span>
-    </md-card-content>
-</md-card>
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            HQ
+        </md-card-title>
+        <md-card-content>
+            <md-list>
+                <md-list-item *ngFor="let choice of armyList.HQ">
+                    {{choice.name}}
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+    </md-card>
+</div>
+
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            Troops
+        </md-card-title>
+        <md-card-content>
+            {{armyList.Name}}
+        </md-card-content>
+    </md-card>
+</div>
+
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            Elites
+        </md-card-title>
+        <md-card-content>
+            {{armyList.Name}}
+        </md-card-content>
+    </md-card>
+</div>
+
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            Fast Attack
+        </md-card-title>
+        <md-card-content>
+            {{armyList.Name}}
+        </md-card-content>
+    </md-card>
+</div>
+
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            Heavy Support
+        </md-card-title>
+        <md-card-content>
+            {{armyList.Name}}
+        </md-card-content>
+    </md-card>
+</div>
+
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            Fortifications
+        </md-card-title>
+        <md-card-content>
+            {{armyList.Name}}
+        </md-card-content>
+    </md-card>
+</div>
+
+<div *ngIf="armyList">
+    <md-card class="armySegment">
+        <md-card-title>
+            Lords of War
+        </md-card-title>
+        <md-card-content>
+            {{armyList.Name}}
+        </md-card-content>
+    </md-card>
+</div>

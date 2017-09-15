@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Army} from "../army";
 import {Http} from "@angular/http";
+import {ArmyList} from "../army-list";
+import {TauArmyList} from "../tau-army-list";
 
 @Component({
   selector: 'app-dashboard',
@@ -10,15 +12,21 @@ import {Http} from "@angular/http";
 export class DashboardComponent implements OnInit {
 
     private army: Army;
-    private armyList: object;
+    private armyList: ArmyList;
+    private armyLists: Array<ArmyList>;
 
     // loading bar info
     private loadingBarMode: string;
     private loadingBarShow: boolean;
 
     constructor(private http:Http) {
+
         this.army = new Army();
         this.army.cost = 0;
+        this.armyLists = [
+            new TauArmyList()
+        ];
+        console.log(this.armyLists)
     }
 
     ngOnInit() {
