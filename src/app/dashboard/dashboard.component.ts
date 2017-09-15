@@ -3,6 +3,7 @@ import {Army} from "../army";
 import {Http} from "@angular/http";
 import {ArmyList} from "../army-list";
 import {TauArmyList} from "../tau-army-list";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-dashboard',
@@ -19,6 +20,8 @@ export class DashboardComponent implements OnInit {
     private loadingBarMode: string;
     private loadingBarShow: boolean;
 
+    private armyFormControl: FormControl;
+
     constructor(private http:Http) {
 
         this.army = new Army();
@@ -27,6 +30,8 @@ export class DashboardComponent implements OnInit {
             new TauArmyList()
         ];
         console.log(this.armyLists)
+
+        this.armyFormControl = new FormControl();
     }
 
     ngOnInit() {

@@ -5,6 +5,7 @@ import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
 import {
+    MdAutocompleteModule,
     MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdListModule, MdProgressBarModule, MdSelectModule,
     MdSidenavModule,
     MdToolbarModule
@@ -38,7 +39,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         MdIconModule,
         MdSidenavModule,
         MdListModule,
-        MdSelectModule
+        MdSelectModule,
+        MdAutocompleteModule
     ],
     providers: [],
     bootstrap: [AppComponent]
