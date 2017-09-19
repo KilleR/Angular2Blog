@@ -17,8 +17,9 @@
             HQ
         </md-card-title>
         <form>
-            <md-form-field>
-                <input type="text" placeholder="Pick an Option" mdInput [formControl]="armyFormControl" [autoComplete]="auto">
+            <!--<md-form-field>-->
+                <!--<input type="text" placeholder="Pick an Option" mdInput [formControl]="armyFormControl" [autoComplete]="auto">-->
+                <input type="text" placeholder="Pick an Option" mdInput >
                 <md-autocomplete #auto="mdAutocomplete">
                     <md-list>
                         <md-option *ngFor="let choice of armyList.HQ" [value]="choice">
@@ -26,7 +27,7 @@
                         </md-option>
                     </md-list>
                 </md-autocomplete>
-            </md-form-field>
+            <!--</md-form-field>-->
         </form>
 
     </md-card>

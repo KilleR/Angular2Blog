@@ -31,3 +31,8 @@
 .scrolling-content {
     /*overflow: auto;*/
 }
+
+/deep/ .route-content {
+    margin: 10px;
+}
+

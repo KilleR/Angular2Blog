@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { BlogComponent } from './blog/blog.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CryptComponent } from './crypt/crypt.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         DashboardComponent,
         BlogComponent,
         PageNotFoundComponent,
+        CryptComponent,
     ],
     imports: [
         BrowserModule,
@@ -40,7 +42,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
         MdSidenavModule,
         MdListModule,
         MdSelectModule,
-        MdAutocompleteModule
+        MdAutocompleteModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
