@@ -32,7 +32,7 @@
     /*overflow: auto;*/
 }
 
-/deep/ .route-content {
+::ng-deep .route-content {
     margin: 10px;
 }
 

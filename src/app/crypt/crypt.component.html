@@ -1,3 +1,8 @@
 <div class="route-content">
-  crypt works!
+    Let's get sassy
+    <button md-raised-button (click)="startActivity()" color="accent">Go!</button>
+    <button md-raised-button (click)="stopActivity()" color="warn">Stop</button>
+    <md-progress-bar mode="determinate" [value]="activityProgress" [color]="activityColor"></md-progress-bar>
+    {{activityColor}}<br>
+    {{activityProgress}}
 </div>
