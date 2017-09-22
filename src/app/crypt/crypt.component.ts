@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Http} from "@angular/http";
 import {Observable} from "rxjs/Rx";
+import {CryptActivity} from "../crypt-activity";
 
 @Component({
     selector: 'app-crypt',
@@ -12,6 +13,7 @@ export class CryptComponent implements OnInit, OnDestroy {
     private activityProgress: number;
     private activityColor: string;
     private activityRepeat;
+    private activities: CryptActivity[];
 
     constructor(private http:Http) {
         this.activityProgress = 0;
@@ -23,6 +25,7 @@ export class CryptComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.http.get("http://127.0.0.1:5000/stop")
+        this.activityRepeat.unsubscribe();
     }
 
     startActivity() {
@@ -58,11 +61,11 @@ export class CryptComponent implements OnInit, OnDestroy {
             .subscribe(res => {
                 console.log("response");
                 let info = res.json();
-                if (info.Done && info.Total) {
+                if (info.Jobs) {
                     console.log("Success");
                     this.activityColor = "primary";
-                    this.activityProgress = (info.Done/info.Total * 100);
-                    if(info.Done == info.Total) {
+                    this.activities = info.Jobs;
+                    if(!info.Running) {
                         this.activityRepeat.unsubscribe();
                     }
                 } else {

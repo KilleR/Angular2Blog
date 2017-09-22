@@ -1,0 +1,5 @@
+<md-card>
+    <div>{{activity.Name}}</div>
+    <md-progress-bar mode="determinate" [value]="(activity.Done / activity.Total * 100)" [color]="(activity.Running?'primary':'primary')"></md-progress-bar>
+    {{activity.Done}} / {{activity.Total}}
+</md-card>
