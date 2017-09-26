@@ -4,6 +4,8 @@ import { DashboardComponent } from '../dashboard/dashboard.component'
 import {BlogComponent} from "../blog/blog.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {CryptComponent} from "../crypt/crypt.component";
+import {LopSocImagesComponent} from "../lop-soc-images/lop-soc-images.component";
+import {LopSocImageDetailComponent} from "../lop-soc-image-detail/lop-soc-image-detail.component";
 
 const routes: Routes = [
     {
@@ -20,6 +22,16 @@ const routes: Routes = [
         path: '',
         component: BlogComponent,
         data: {title: "Dev Blog"}
+    },
+    {
+        path: 'lopsoc',
+        component: LopSocImagesComponent,
+        data: {title: "LOpSoc Images"}
+    },
+    {
+        path: 'lopsoc/:image',
+        component: LopSocImageDetailComponent,
+        data: {title: "LOpSoc Images"}
     },
     { path: '**', component: PageNotFoundComponent }
 

@@ -6,7 +6,8 @@ import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {
     MdAutocompleteModule,
-    MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdListModule, MdProgressBarModule, MdSelectModule,
+    MdButtonModule, MdCardModule, MdGridListModule, MdIconModule, MdInputModule, MdListModule, MdProgressBarModule,
+    MdSelectModule,
     MdSidenavModule,
     MdToolbarModule
 } from "@angular/material";
@@ -18,6 +19,8 @@ import {BlogComponent} from './blog/blog.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {CryptComponent} from './crypt/crypt.component';
 import {CryptActivityComponent} from './crypt-activity/crypt-activity.component';
+import { LopSocImagesComponent } from './lop-soc-images/lop-soc-images.component';
+import { LopSocImageDetailComponent } from './lop-soc-image-detail/lop-soc-image-detail.component';
 
 @NgModule({
     declarations: [
@@ -28,6 +31,8 @@ import {CryptActivityComponent} from './crypt-activity/crypt-activity.component'
         PageNotFoundComponent,
         CryptComponent,
         CryptActivityComponent,
+        LopSocImagesComponent,
+        LopSocImageDetailComponent,
     ],
     imports: [
         BrowserModule,
@@ -45,6 +50,7 @@ import {CryptActivityComponent} from './crypt-activity/crypt-activity.component'
         MdListModule,
         MdSelectModule,
         MdAutocompleteModule,
+        MdGridListModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -9,17 +9,19 @@
 
         <md-sidenav #sidenav mode="over" >
             <md-toolbar color="primary">
+                <button md-icon-button="" (click)="sidenav.toggle()">
+                    <md-icon>menu</md-icon>
+                </button>
                 <span class="spacer"></span>
             </md-toolbar>
 
             <md-nav-list>
-                <a md-list-item routerLink="">Home</a>
-                <a md-list-item routerLink="army">Armies</a>
-                <a md-list-item routerLink="crypt">Crypt</a>
+                <a md-list-item routerLink="" routerLinkActive="mat-list-item-focus">Home</a>
+                <a md-list-item routerLink="army" routerLinkActive="mat-list-item-focus">Armies</a>
+                <a md-list-item routerLink="crypt" routerLinkActive="mat-list-item-focus">Crypt</a>
+                <a md-list-item routerLink="lopsoc" routerLinkActive="mat-list-item-focus">LOpSoc Images</a>
             </md-nav-list>
         </md-sidenav>
-
-        <md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
 
         <router-outlet></router-outlet>
 

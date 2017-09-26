@@ -15,7 +15,7 @@ export class CryptComponent implements OnInit, OnDestroy {
     private activityRepeat;
     private activities: CryptActivity[];
 
-    constructor(private http:Http) {
+    constructor(private http: Http) {
         this.activityProgress = 0;
         this.activityColor = "primary"
     }
@@ -24,22 +24,24 @@ export class CryptComponent implements OnInit, OnDestroy {
     }
 
     ngOnDestroy() {
-        this.http.get("http://127.0.0.1:5000/stop")
-        this.activityRepeat.unsubscribe();
+        this.http.get("http://127.0.0.1:5000/stop");
+        if (this.activityRepeat) {
+            this.activityRepeat.unsubscribe();
+        }
     }
 
     startActivity() {
-        if(this.activityRepeat) {
+        if (this.activityRepeat) {
             this.activityRepeat.unsubscribe();
         }
         this.http.get("http://127.0.0.1:5000/start")
-            .subscribe(res=> {
+            .subscribe(res => {
                 this.activityColor = "primary";
                 this.activityRepeat = Observable.interval(400)
                     .subscribe(data => {
                         this.getActivityProgress();
                     })
-            }, err=> {
+            }, err => {
                 this.activityColor = "warn";
                 console.log(err)
             })
@@ -47,10 +49,10 @@ export class CryptComponent implements OnInit, OnDestroy {
 
     stopActivity() {
         this.http.get("http://127.0.0.1:5000/stop")
-            .subscribe(res=> {
+            .subscribe(res => {
                 this.activityColor = "primary";
                 this.activityRepeat.unsubscribe();
-            }, err=> {
+            }, err => {
                 this.activityColor = "warn";
                 console.log(err)
             })
@@ -65,18 +67,18 @@ export class CryptComponent implements OnInit, OnDestroy {
                     console.log("Success");
                     this.activityColor = "primary";
                     this.activities = info.Jobs;
-                    if(!info.Running) {
+                    if (!info.Running) {
                         this.activityRepeat.unsubscribe();
                     }
                 } else {
                     console.log("Failure");
                     this.activityColor = "warn";
                 }
-            }, res=> {
+            }, res => {
                 console.log("Error");
                 console.log(res);
                 this.activityColor = "warn";
-            })
+            });
     }
 
 }
