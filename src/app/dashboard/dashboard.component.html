@@ -1,139 +1,48 @@
-<md-card>
-    <md-toolbar>
-        <span>Army Tools</span>
-        <div class="spacer"></div>
-        <span>{{army.cost}}</span>
-    </md-toolbar>
-    <md-select [(ngModel)]="armyList" placeholder="Select Army" floatPlaceholder="never">
-        <md-option *ngFor="let list of armyLists" [value]="list">
-            {{list.Name}}
-        </md-option>
-    </md-select>
-</md-card>
-
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            HQ
-        </md-card-title>
-        <form>
-            <!--<md-form-field>-->
-                <!--<input type="text" placeholder="Pick an Option" mdInput [formControl]="armyFormControl" [autoComplete]="auto">-->
-                <input type="text" placeholder="Pick an Option" mdInput >
-                <md-autocomplete #auto="mdAutocomplete">
-                    <md-list>
-                        <md-option *ngFor="let choice of armyList.HQ" [value]="choice">
-                            {{choice.name}}
-                        </md-option>
-                    </md-list>
-                </md-autocomplete>
-            <!--</md-form-field>-->
-        </form>
-
+<div class="route-content">
+    <md-card>
+        <md-toolbar>
+            <span>Army Tools</span>
+            <div class="spacer"></div>
+            <span>CP: {{army.CP}} |</span>
+            <span>Cost: {{army.cost}}</span>
+        </md-toolbar>
+        <md-select [(ngModel)]="armyList" placeholder="Select Army" floatPlaceholder="never">
+            <md-option *ngFor="let list of armyLists" [value]="list">
+                {{list.Name}}
+            </md-option>
+        </md-select>
     </md-card>
-</div>
 
-<div *ngIf="armyList">
-    <md-card class="armySegment">
+    <md-card>
         <md-card-title>
-            Troops
+            <md-toolbar>
+                <span>Detachments</span>
+            </md-toolbar>
         </md-card-title>
+        <md-select [(ngModel)]="selectedDetachment" placeholder="Select a detachment">
+            <md-option *ngFor="let option of detachmentOptions" [value]="option">
+                {{option.Name}}
+            </md-option>
+        </md-select>
+        <button md-button (click)="addDetachment()">Add Detachment</button>
+        <button md-button (click)="army.sumArmyCP()">Get CP</button>
+
         <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.Troops">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
+            <!-- Detachments in Army -->
+            <md-card *ngFor="let detachment of army.Detachments" >
+                <md-card-title>
+                    <md-toolbar>
+                        <span>{{detachment.Name}}</span>
+                        <div class="spacer"></div>
+                        <span>CP: {{detachment.CP}}</span>
+                    </md-toolbar>
+                </md-card-title>
+
+                <md-card-content>
+                    <app-detachment [detachment]="detachment"></app-detachment>
+                </md-card-content>
+            </md-card>
         </md-card-content>
     </md-card>
-</div>
 
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            Elites
-        </md-card-title>
-        <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.Elites">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
-</div>
-
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            Fast Attack
-        </md-card-title>
-        <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.FastAttack">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
-</div>
-
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            Heavy Support
-        </md-card-title>
-        <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.HeavySupport">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
-</div>
-
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            Transports
-        </md-card-title>
-        <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.Transport">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
-</div>
-
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            Fortifications
-        </md-card-title>
-        <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.Fortifications">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
-</div>
-
-<div *ngIf="armyList">
-    <md-card class="armySegment">
-        <md-card-title>
-            Lords of War
-        </md-card-title>
-        <md-card-content>
-            <md-list>
-                <md-list-item *ngFor="let choice of armyList.LordOfWar">
-                    {{choice.name}}
-                </md-list-item>
-            </md-list>
-        </md-card-content>
-    </md-card>
 </div>

@@ -25,9 +25,7 @@ export class CryptComponent implements OnInit, OnDestroy {
 
     ngOnDestroy() {
         this.http.get("http://127.0.0.1:5000/stop");
-        if (this.activityRepeat) {
-            this.activityRepeat.unsubscribe();
-        }
+        if(this.activityRepeat) this.activityRepeat.unsubscribe();
     }
 
     startActivity() {

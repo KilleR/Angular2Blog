@@ -19,6 +19,8 @@ import {BlogComponent} from './blog/blog.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {CryptComponent} from './crypt/crypt.component';
 import {CryptActivityComponent} from './crypt-activity/crypt-activity.component';
+import { DetachmentComponent } from './detachment/detachment.component';
+import { DetachmentSectionComponent } from './detachment-section/detachment-section.component';
 import { LopSocImagesComponent } from './lop-soc-images/lop-soc-images.component';
 import { LopSocImageDetailComponent } from './lop-soc-image-detail/lop-soc-image-detail.component';
 
@@ -31,6 +33,8 @@ import { LopSocImageDetailComponent } from './lop-soc-image-detail/lop-soc-image
         PageNotFoundComponent,
         CryptComponent,
         CryptActivityComponent,
+        DetachmentComponent,
+        DetachmentSectionComponent,
         LopSocImagesComponent,
         LopSocImageDetailComponent,
     ],
