@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DetachmentSection} from "../detachment-section";
 import {Unit} from "../unit";
+import {cloneDeep} from 'lodash';
 
 @Component({
     selector: 'app-detachment-section',
@@ -25,7 +26,8 @@ export class DetachmentSectionComponent implements OnInit {
 
     addUnit() {
         if(this.selectedUnit) {
-            this.section.addUnit(this.selectedUnit);
+            const u = cloneDeep(this.selectedUnit);
+            this.section.addUnit(u);
         }
     }
 

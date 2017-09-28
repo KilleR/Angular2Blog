@@ -7,6 +7,7 @@ import {TauArmyList} from "./tau-army-list";
 import {DetachmentPatrol} from "./detachment-patrol";
 import {DetachmentBattalion} from "./detachment-battalion";
 import {DetachmentBrigade} from "./detachment-brigade";
+import {cloneDeep } from 'lodash';
 
 @Component({
   selector: 'app-army-builder',
@@ -53,7 +54,8 @@ export class ArmyBuilderComponent implements OnInit {
 
     addDetachment() {
         if(this.selectedDetachment) {
-            this.army.Detachments.push(this.selectedDetachment.constructor());
+            const d = cloneDeep(this.selectedDetachment);
+            this.army.Detachments.push(d);
             // this.makeDetachmentOptions();
         }
     }
