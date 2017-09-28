@@ -1,7 +1,3 @@
-.spacer {
-    flex: 1 1 auto;
-}
-
 .layout-fill {
     /*min-height: 100%;*/
     /*max-width: 100%;*/
@@ -30,6 +26,10 @@
 
 .scrolling-content {
     /*overflow: auto;*/
+}
+
+::ng-deep .spacer {
+    flex: 1 1 auto;
 }
 
 ::ng-deep .route-content {

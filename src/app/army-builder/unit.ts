@@ -2,7 +2,7 @@ export class Unit {
     name: string;
     cost: number;
     power: number;
-    type: string;
+    role: string;
     movement: number;
     ws: number;
     bs: number;

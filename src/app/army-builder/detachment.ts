@@ -1,4 +1,5 @@
 import {DetachmentSection} from "./detachment-section";
+import {Unit} from "./unit";
 
 export class Detachment {
     Name: string;
@@ -13,24 +14,36 @@ export class Detachment {
     Fliers: DetachmentSection;
     Fortifications: DetachmentSection;
 
+    get cost(): number {
+        return this.getCost()
+    }
+
     constructor() {
         this.HQ = new DetachmentSection();
-        this.HQ.Name = "HQ";
+        this.HQ.name = "HQ";
         this.Troops = new DetachmentSection();
-        this.Troops.Name = "Troops";
+        this.Troops.name = "Troops";
         this.Elites = new DetachmentSection();
-        this.Elites.Name = "Elites";
+        this.Elites.name = "Elites";
         this.FastAttack = new DetachmentSection();
-        this.FastAttack.Name = "Fast Attack";
+        this.FastAttack.name = "Fast Attack";
         this.HeavySupport = new DetachmentSection();
-        this.HeavySupport.Name = "Heavy Support";
+        this.HeavySupport.name = "Heavy Support";
         this.Transports = new DetachmentSection();
-        this.Transports.Name = "Transports";
+        this.Transports.name = "Transports";
         this.LordOfWar = new DetachmentSection();
-        this.LordOfWar.Name = "Lords of War";
+        this.LordOfWar.name = "Lords of War";
         this.Fliers = new DetachmentSection();
-        this.Fliers.Name = "Fliers";
+        this.Fliers.name = "Fliers";
         this.Fortifications = new DetachmentSection();
-        this.Fortifications.Name = "Fortificatons";
+        this.Fortifications.name = "Fortificatons";
+    }
+
+    getCost() {
+        let total = 0;
+
+        total += this.HQ.cost;
+
+        return total;
     }
 }

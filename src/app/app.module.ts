@@ -8,7 +8,7 @@ import {
     MdAutocompleteModule,
     MdButtonModule, MdCardModule, MdGridListModule, MdIconModule, MdInputModule, MdListModule, MdProgressBarModule,
     MdSelectModule,
-    MdSidenavModule,
+    MdSidenavModule, MdTableModule,
     MdToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -54,10 +54,13 @@ import { ArmyBuilderComponent } from './army-builder/army-builder.component';
         MdListModule,
         MdSelectModule,
         MdAutocompleteModule,
-        MdGridListModule
+        MdGridListModule,
+        MdTableModule
     ],
     providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {
+
 }
+

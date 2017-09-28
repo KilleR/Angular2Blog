@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Detachment} from "../detachment";
+import {ArmyList} from "../army-list";
 
 @Component({
     selector: 'app-detachment',
@@ -8,10 +9,9 @@ import {Detachment} from "../detachment";
 })
 export class DetachmentComponent implements OnInit {
     @Input() detachment: Detachment;
-    @Output() CP: EventEmitter<number> = new EventEmitter<number>();
+    @Input() armyList: ArmyList;
 
     constructor() {
-        // this.CP.emit(this.detachment.CP)
     }
 
     ngOnInit() {

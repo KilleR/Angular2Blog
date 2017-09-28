@@ -1,4 +1,4 @@
-import {ArmyList} from "./army-builder/army-list";
+import {ArmyList} from "./army-list";
 
 export class TauArmyList extends ArmyList {
     constructor() {
@@ -7,8 +7,8 @@ export class TauArmyList extends ArmyList {
         this.HQ = [
             {
                 name: "Commander",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 76,
                 power: 6,
                 movement: 8,
                 ws: 3,
@@ -22,8 +22,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Coldstar Commander",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 90,
                 power: 7,
                 movement: 20,
                 ws: 3,
@@ -37,8 +37,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Ethereal",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 45,
                 power: 2,
                 movement: 6,
                 ws: 3,
@@ -52,8 +52,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Cadre Fireblade",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 39,
                 power: 2,
                 movement: 6,
                 ws: 3,
@@ -67,8 +67,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Commander Farsight",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 151,
                 power: 8,
                 movement: 8,
                 ws: 2,
@@ -82,8 +82,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Commander Shadowsun",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 167,
                 power: 9,
                 movement: 8,
                 ws: 3,
@@ -97,8 +97,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Aun'Shi",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 68,
                 power: 4,
                 movement: 6,
                 ws: 2,
@@ -112,8 +112,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Aun'Va",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 65,
                 power: 4,
                 movement: 6,
                 ws: 6,
@@ -127,8 +127,8 @@ export class TauArmyList extends ArmyList {
             },
             {
                 name: "Darkstrider",
-                type: "hq",
-                cost: 0,
+                role: "hq",
+                cost: 45,
                 power: 3,
                 movement: 8,
                 ws: 3,
@@ -153,7 +153,7 @@ export class TauArmyList extends ArmyList {
         this.HeavySupport = [
 
         ];
-        this.Transport = [
+        this.Transports = [
 
         ];
         this.LordOfWar = [

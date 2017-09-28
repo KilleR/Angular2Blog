@@ -3,6 +3,73 @@
         <span>{{section.Name}}</span>
         <span>({{section.min}} - {{section.max}})</span>
     </md-card-title>
+
     <md-card-content>
+        <md-select [(ngModel)]="selectedUnit" placeholder="Select a unit">
+            <md-option *ngFor="let option of unitOptions" [value]="option">
+                {{option.name}}
+            </md-option>
+        </md-select>
+        <button md-icon-button="" (click)="addUnit()">
+            <md-icon>add_circle</md-icon>
+        </button>
+    </md-card-content>
+
+    <md-card-content>
+        <md-table #table [dataSource]="section.unitsDataSource">
+            <!-- Name Column -->
+            <ng-container mdColumnDef="name">
+                <md-header-cell *mdHeaderCellDef [ngClass]=""> Name </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.name}} </md-cell>
+            </ng-container>
+            <!-- Movement Column -->
+            <ng-container mdColumnDef="movement">
+                <md-header-cell *mdHeaderCellDef> MV </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.movement}}" </md-cell>
+            </ng-container>
+            <!-- BS Column -->
+            <ng-container mdColumnDef="bs">
+                <md-header-cell *mdHeaderCellDef> BS </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.bs}}+ </md-cell>
+            </ng-container>
+            <!-- WS Column -->
+            <ng-container mdColumnDef="ws">
+                <md-header-cell *mdHeaderCellDef> WS </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.ws}}+ </md-cell>
+            </ng-container>
+            <!-- Strength Column -->
+            <ng-container mdColumnDef="strength">
+                <md-header-cell *mdHeaderCellDef> S </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.strength}} </md-cell>
+            </ng-container>
+            <!-- Toughness Column -->
+            <ng-container mdColumnDef="toughness">
+                <md-header-cell *mdHeaderCellDef> T </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.toughness}} </md-cell>
+            </ng-container>
+            <!-- Wounds Column -->
+            <ng-container mdColumnDef="wounds">
+                <md-header-cell *mdHeaderCellDef> W </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.wounds}} </md-cell>
+            </ng-container>
+            <!-- Attacks Column -->
+            <ng-container mdColumnDef="attacks">
+                <md-header-cell *mdHeaderCellDef> WS </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.attacks}} </md-cell>
+            </ng-container>
+            <!-- Save Column -->
+            <ng-container mdColumnDef="save">
+                <md-header-cell *mdHeaderCellDef> Sv </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.save}}+ </md-cell>
+            </ng-container>
+            <!-- Leadership Column -->
+            <ng-container mdColumnDef="leadership">
+                <md-header-cell *mdHeaderCellDef> Ld </md-header-cell>
+                <md-cell *mdCellDef="let element"> {{element.leadership}} </md-cell>
+            </ng-container>
+
+            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+        </md-table>
     </md-card-content>
 </md-card>
