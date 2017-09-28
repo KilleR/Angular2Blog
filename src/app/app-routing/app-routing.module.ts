@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from '../dashboard/dashboard.component'
 import {BlogComponent} from "../blog/blog.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {CryptComponent} from "../crypt/crypt.component";
 import {LopSocImagesComponent} from "../lop-soc-images/lop-soc-images.component";
 import {LopSocImageDetailComponent} from "../lop-soc-image-detail/lop-soc-image-detail.component";
+import {ArmyBuilderComponent} from "../army-builder/army-builder.component";
 
 const routes: Routes = [
     {
         path: 'army',
-        component: DashboardComponent,
+        component: ArmyBuilderComponent,
         data: {title: "Army Builder"}
     },
     {

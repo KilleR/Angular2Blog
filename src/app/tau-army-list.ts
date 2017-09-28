@@ -1,4 +1,4 @@
-import {ArmyList} from "./army-list";
+import {ArmyList} from "./army-builder/army-list";
 
 export class TauArmyList extends ArmyList {
     constructor() {

@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {Army} from "../army";
-import {Http} from "@angular/http";
-import {ArmyList} from "../army-list";
-import {TauArmyList} from "../tau-army-list";
+import {Army} from "./army";
+import {ArmyList} from "./army-list";
+import {Detachment} from "./detachment";
 import {FormControl} from "@angular/forms";
-import {Detachment} from "../detachment";
-import {DetachmentPatrol} from "../detachment-patrol";
-import {DetachmentBattalion} from "../detachment-battalion";
-import {DetachmentBrigade} from "../detachment-brigade";
+import {Http} from "@angular/http";
+import {TauArmyList} from "../tau-army-list";
+import {DetachmentPatrol} from "./detachment-patrol";
+import {DetachmentBattalion} from "./detachment-battalion";
+import {DetachmentBrigade} from "./detachment-brigade";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-army-builder',
+  templateUrl: './army-builder.component.html',
+  styleUrls: ['./army-builder.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class ArmyBuilderComponent implements OnInit {
 
     private army: Army;
     private armyList: ArmyList;

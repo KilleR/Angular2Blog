@@ -1,0 +1,48 @@
+<div class="route-content">
+  <md-card>
+    <md-toolbar>
+      <span>Army Tools</span>
+      <div class="spacer"></div>
+      <span>CP: {{army.CP}} |</span>
+      <span>Cost: {{army.cost}}</span>
+    </md-toolbar>
+    <md-select [(ngModel)]="armyList" placeholder="Select Army" floatPlaceholder="never">
+      <md-option *ngFor="let list of armyLists" [value]="list">
+        {{list.Name}}
+      </md-option>
+    </md-select>
+  </md-card>
+
+  <md-card>
+    <md-card-title>
+      <md-toolbar>
+        <span>Detachments</span>
+      </md-toolbar>
+    </md-card-title>
+    <md-select [(ngModel)]="selectedDetachment" placeholder="Select a detachment">
+      <md-option *ngFor="let option of detachmentOptions" [value]="option">
+        {{option.Name}}
+      </md-option>
+    </md-select>
+    <button md-button (click)="addDetachment()">Add Detachment</button>
+    <button md-button (click)="army.sumArmyCP()">Get CP</button>
+
+    <md-card-content>
+      <!-- Detachments in Army -->
+      <md-card *ngFor="let detachment of army.Detachments" >
+        <md-card-title>
+          <md-toolbar>
+            <span>{{detachment.Name}}</span>
+            <div class="spacer"></div>
+            <span>CP: {{detachment.CP}}</span>
+          </md-toolbar>
+        </md-card-title>
+
+        <md-card-content>
+          <app-detachment [detachment]="detachment"></app-detachment>
+        </md-card-content>
+      </md-card>
+    </md-card-content>
+  </md-card>
+
+</div>
