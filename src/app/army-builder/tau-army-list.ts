@@ -143,19 +143,34 @@ export class TauArmyList extends ArmyList {
         ];
         this.Troops = [
             {
-                name: "Darkstrider",
-                role: "hq",
-                cost: 45,
+                name: "Strike Team",
+                role: "troops",
+                cost: 0,
                 power: 3,
-                movement: 8,
-                ws: 3,
-                bs: 2,
-                strength: 5,
-                toughness: 5,
-                wounds: 6,
-                attacks: 4,
-                leadership: 9,
-                save: 3
+                movement: 6,
+                ws: 5,
+                bs: 4,
+                strength: 3,
+                toughness: 3,
+                wounds: 1,
+                attacks: 1,
+                leadership: 6,
+                save: 4
+            },
+            {
+                name: "Breacher Team",
+                role: "troops",
+                cost: 0,
+                power: 3,
+                movement: 6,
+                ws: 5,
+                bs: 4,
+                strength: 3,
+                toughness: 3,
+                wounds: 1,
+                attacks: 1,
+                leadership: 6,
+                save: 4
             }
         ];
         this.Elites = [

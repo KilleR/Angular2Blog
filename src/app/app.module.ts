@@ -23,6 +23,7 @@ import { DetachmentSectionComponent } from './army-builder/detachment-section/de
 import { LopSocImagesComponent } from './lop-soc-images/lop-soc-images.component';
 import { LopSocImageDetailComponent } from './lop-soc-image-detail/lop-soc-image-detail.component';
 import { ArmyBuilderComponent } from './army-builder/army-builder.component';
+import { UnitComponent } from './army-builder/unit/unit.component';
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import { ArmyBuilderComponent } from './army-builder/army-builder.component';
         LopSocImagesComponent,
         LopSocImageDetailComponent,
         ArmyBuilderComponent,
+        UnitComponent,
     ],
     imports: [
         BrowserModule,
