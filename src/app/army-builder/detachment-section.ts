@@ -19,6 +19,11 @@ export class DetachmentSection {
         return this.unitObservable.getUnits();
     }
 
+    get valid(): boolean {
+        let len = this.units.length;
+        return (len <= this.max && len >= this.min);
+    }
+
     constructor() {
         this.min = 0;
         this.max = 0;
@@ -57,7 +62,7 @@ export class UnitDataSource extends DataSource<any> {
 }
 
 export class UnitObervable  {
-    dataChange: BehaviorSubject<Unit[]> = new BehaviorSubject<Unit[]>([])
+    dataChange: BehaviorSubject<Unit[]> = new BehaviorSubject<Unit[]>([]);
     get data(): Unit[] { return this.dataChange.value; }
 
     constructor() {

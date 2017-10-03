@@ -18,6 +18,10 @@ export class Detachment {
         return this.getCost()
     }
 
+    get valid(): boolean {
+        return this.HQ.valid && this.Troops.valid;
+    }
+
     constructor() {
         this.HQ = new DetachmentSection();
         this.HQ.name = "HQ";
@@ -45,5 +49,10 @@ export class Detachment {
         total += this.HQ.cost;
 
         return total;
+    }
+
+    delete() {
+        console.log("Deleting detachment:");
+        console.log(this);
     }
 }

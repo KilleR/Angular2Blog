@@ -2,6 +2,9 @@
     <md-card-title>
         <span>{{section.Name}}</span>
         <span>({{section.min}} - {{section.max}})</span>
+        <button *ngIf="!section.valid" md-icon-button color="warn">
+            <md-icon>warning</md-icon>
+        </button>
     </md-card-title>
 
     <md-card-content>

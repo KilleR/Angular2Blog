@@ -142,7 +142,21 @@ export class TauArmyList extends ArmyList {
             },
         ];
         this.Troops = [
-
+            {
+                name: "Darkstrider",
+                role: "hq",
+                cost: 45,
+                power: 3,
+                movement: 8,
+                ws: 3,
+                bs: 2,
+                strength: 5,
+                toughness: 5,
+                wounds: 6,
+                attacks: 4,
+                leadership: 9,
+                save: 3
+            }
         ];
         this.Elites = [
 
