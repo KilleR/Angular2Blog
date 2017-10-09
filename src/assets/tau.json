@@ -1,17 +1,278 @@
-{
-  "units": [
-    {
-      "name": "Commander",
-      "cost": 0,
-      "power": 6,
+[
+  {
+    "name": "Commander",
+    "role": "HQ",
+    "cost": 76,
+    "power": 6,
+    "models": [{
+      "name": "Commmander",
+      "cost": 76,
+      "min": 1,
+      "max": 1,
+      "count": 1,
       "movement": 8,
       "ws": 3,
       "bs": 2,
+      "strength": 5,
       "toughness": 5,
       "wounds": 6,
       "attacks": 4,
       "leadership": 9,
       "save": 3
-    }
-  ]
-}
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Coldstar Commander",
+    "role": "HQ",
+    "cost": 90,
+    "power": 7,
+    "models": [{
+      "name": "Commander",
+      "cost": 90,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 20,
+      "ws": 3,
+      "bs": 2,
+      "strength": 5,
+      "toughness": 5,
+      "wounds": 6,
+      "attacks": 4,
+      "leadership": 9,
+      "save": 3
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Ethereal",
+    "role": "HQ",
+    "cost": 45,
+    "power": 2,
+    "models": [{
+      "name": "Ethereal",
+      "cost": 45,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 6,
+      "ws": 3,
+      "bs": 4,
+      "strength": 3,
+      "toughness": 3,
+      "wounds": 4,
+      "attacks": 3,
+      "leadership": 9,
+      "save": 5
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Cadre Fireblade",
+    "role": "HQ",
+    "cost": 39,
+    "power": 2,
+    "models": [{
+      "name": "Cadre Fireblade",
+      "cost": 39,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 6,
+      "ws": 3,
+      "bs": 2,
+      "strength": 3,
+      "toughness": 3,
+      "wounds": 5,
+      "attacks": 3,
+      "leadership": 8,
+      "save": 4
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Commander Farsight",
+    "role": "HQ",
+    "cost": 151,
+    "power": 8,
+    "models": [{
+      "name": "Commander Farsight",
+      "cost": 151,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 8,
+      "ws": 2,
+      "bs": 2,
+      "strength": 5,
+      "toughness": 5,
+      "wounds": 6,
+      "attacks": 4,
+      "leadership": 9,
+      "save": 3
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Commander Shadowsun",
+    "role": "HQ",
+    "cost": 167,
+    "power": 9,
+    "models": [{
+      "name": "Commander Shadowsun",
+      "cost": 167,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 8,
+      "ws": 3,
+      "bs": 2,
+      "strength": 4,
+      "toughness": 4,
+      "wounds": 5,
+      "attacks": 4,
+      "leadership": 9,
+      "save": 3
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Aun'Shi",
+    "role": "HQ",
+    "cost": 68,
+    "power": 4,
+    "models": [{
+      "name": "Aun'Shi",
+      "cost": 68,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 6,
+      "ws": 2,
+      "bs": 4,
+      "strength": 3,
+      "toughness": 3,
+      "wounds": 5,
+      "attacks": 5,
+      "leadership": 9,
+      "save": 0
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Aun'Va",
+    "role": "HQ",
+    "cost": 65,
+    "power": 4,
+    "models": [{
+      "name": "Aun'va",
+      "cost": 65,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 6,
+      "ws": 6,
+      "bs": 24,
+      "strength": 2,
+      "toughness": 3,
+      "wounds": 6,
+      "attacks": 1,
+      "leadership": 9,
+      "save": 5
+    }],
+    "keywords": ["T'au Empire"]
+  },
+  {
+    "name": "Darkstrider",
+    "role": "HQ",
+    "cost": 45,
+    "power": 3,
+    "models": [{
+      "name": "Darkstrider",
+      "cost": 45,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 8,
+      "ws": 3,
+      "bs": 2,
+      "strength": 5,
+      "toughness": 5,
+      "wounds": 6,
+      "attacks": 4,
+      "leadership": 9,
+      "save": 3
+    }],
+    "keywords": ["T'au Empire"]
+  },
+
+  {
+    "name": "Strike Team",
+    "role": "Troops",
+    "cost": 45,
+    "power": 3,
+    "models": [{
+      "name": "Fire Warrior",
+      "cost": 8,
+      "min": 4,
+      "max": 11,
+      "count": 4,
+      "movement": 6,
+      "ws": 5,
+      "bs": 4,
+      "strength": 3,
+      "toughness": 3,
+      "wounds": 1,
+      "attacks": 1,
+      "leadership": 6,
+      "save": 4
+    },{
+      "name": "Fire Warrior Shas'ui",
+      "cost": 8,
+      "min": 1,
+      "max": 1,
+      "count": 1,
+      "movement": 6,
+      "ws": 5,
+      "bs": 4,
+      "strength": 3,
+      "toughness": 3,
+      "wounds": 1,
+      "attacks": 2,
+      "leadership": 7,
+      "save": 4
+    },{
+      "name": "DS8 Tactical Support turret",
+      "cost": 20,
+      "min": 0,
+      "max": 1,
+      "count": 0,
+      "movement": 0,
+      "ws": 0,
+      "bs": 4,
+      "strength": 3,
+      "toughness": 3,
+      "wounds": 1,
+      "attacks": 0,
+      "leadership": 4,
+      "save": 4
+    },{
+      "name": "MV36 Guardian Drone",
+      "cost": 8,
+      "min": 0,
+      "max": 1,
+      "count": 0,
+      "movement": 8,
+      "ws": 5,
+      "bs": 5,
+      "strength": 3,
+      "toughness": 4,
+      "wounds": 1,
+      "attacks": 1,
+      "leadership": 6,
+      "save": 4
+    }],
+    "keywords": ["T'au Empire"]
+  }
+]

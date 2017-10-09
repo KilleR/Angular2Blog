@@ -2,13 +2,25 @@ import {Unit} from "./unit";
 
 export class ArmyList {
     Name: string;
-    HQ: Array<Unit>;
-    Troops: Array<Unit>;
-    Elites: Array<Unit>;
-    FastAttack: Array<Unit>;
-    HeavySupport: Array<Unit>;
-    Transports: Array<Unit>;
-    LordOfWar: Array<Unit>;
-    Fliers: Array<Unit>;
-    Fortifications: Array<Unit>;
+    HQ: Unit[];
+    Troops: Unit[];
+    Elites: Unit[];
+    FastAttack: Unit[];
+    HeavySupport: Unit[];
+    Transports: Unit[];
+    LordOfWar: Unit[];
+    Fliers: Unit[];
+    Fortifications: Unit[];
+    
+    constructor() {
+        this.HQ = [];
+        this.Troops = [];
+        this.Elites = [];
+        this.FastAttack = [];
+        this.HeavySupport = [];
+        this.Transports = [];
+        this.LordOfWar = [];
+        this.Fliers = [];
+        this.Fortifications = [];
+    }
 }

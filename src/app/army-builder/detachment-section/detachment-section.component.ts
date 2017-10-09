@@ -12,7 +12,7 @@ export class DetachmentSectionComponent implements OnInit {
     @Input() section: DetachmentSection;
     @Input() unitOptions: Unit[];
 
-    private displayedColumns = ['name', 'movement', 'bs', 'ws', 'strength', 'toughness', 'wounds','attacks', 'save', 'leadership'];
+    private displayedColumns = ['count', 'name', 'movement', 'bs', 'ws', 'strength', 'toughness', 'wounds','attacks', 'save', 'leadership'];
 
     private selectedUnit: Unit;
 
