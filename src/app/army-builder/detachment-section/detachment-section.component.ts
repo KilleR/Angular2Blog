@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {DetachmentSection} from "../detachment-section";
 import {Unit} from "../unit";
 import {cloneDeep} from 'lodash';
@@ -11,6 +11,7 @@ import {cloneDeep} from 'lodash';
 export class DetachmentSectionComponent implements OnInit {
     @Input() section: DetachmentSection;
     @Input() unitOptions: Unit[];
+    @Output() onDelete;
 
     private displayedColumns = ['count', 'name', 'movement', 'bs', 'ws', 'strength', 'toughness', 'wounds','attacks', 'save', 'leadership'];
 
