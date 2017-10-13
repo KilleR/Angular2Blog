@@ -14,7 +14,7 @@ session_start();
 if(!empty($_POST) && !empty($_SESSION['loggedIn'])) {
 
     $params = array();
-    $query = 'INSERT INTO posts (title, content, rating) VALUES (:title, :content, :rating)';
+    $query = 'INSERT INTO blog_posts (title, content, rating) VALUES (:title, :content, :rating)';
     $params[':title'] = $_POST['title'];
     $params[':content'] = $_POST['content'];
     $params[':rating'] = $_POST['rating'];
@@ -23,10 +23,10 @@ if(!empty($_POST) && !empty($_SESSION['loggedIn'])) {
     unset($query, $params);
 }
 
-$query = 'SELECT title, content, rating, createtime FROM posts ORDER BY createtime DESC';
+$query = 'SELECT title, content, rating, createtime FROM blog_posts ORDER BY createtime DESC';
 $result = PDOexecute_select($query, array());
 
-$assets = [];
+$assets = array();
 
 foreach($result as $row) {
     $assets[] = [

@@ -18,12 +18,7 @@ import {BlogComponent} from './blog/blog.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {CryptComponent} from './crypt/crypt.component';
 import {CryptActivityComponent} from './crypt-activity/crypt-activity.component';
-import { DetachmentComponent } from './army-builder/detachment/detachment.component';
-import { DetachmentSectionComponent } from './army-builder/detachment-section/detachment-section.component';
-import { LopSocImagesComponent } from './lop-soc-images/lop-soc-images.component';
-import { LopSocImageDetailComponent } from './lop-soc-image-detail/lop-soc-image-detail.component';
-import { ArmyBuilderComponent } from './army-builder/army-builder.component';
-import { UnitComponent } from './army-builder/unit/unit.component';
+import { MephalaTestComponent } from './mephala-test/mephala-test.component';
 
 @NgModule({
     declarations: [
@@ -33,12 +28,7 @@ import { UnitComponent } from './army-builder/unit/unit.component';
         PageNotFoundComponent,
         CryptComponent,
         CryptActivityComponent,
-        DetachmentComponent,
-        DetachmentSectionComponent,
-        LopSocImagesComponent,
-        LopSocImageDetailComponent,
-        ArmyBuilderComponent,
-        UnitComponent,
+        MephalaTestComponent,
     ],
     imports: [
         BrowserModule,

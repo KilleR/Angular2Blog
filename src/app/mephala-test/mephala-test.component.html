@@ -1,0 +1,35 @@
+<div class="route-content">
+    <md-card>
+        <md-toolbar>
+            <span>
+                Mephala Testing
+            </span>
+        </md-toolbar>
+
+        <md-form-field>
+            <input mdInput [(ngModel)]="serialNumber" placeholder="Device Serial" />
+        </md-form-field>
+        <button md-raised-button="" (click)="getDeviceInfo()" color="primary">Fetch Details</button>
+        <md-card-content>
+            <div *ngFor="let job of waitingJobs">
+                <span>{{job.type}}</span>
+                <span>{{job.param}}</span>
+                <span>{{job.value}}</span>
+            </div>
+        </md-card-content>
+
+        <md-card-content>
+            <md-form-field>
+                <input mdInput [(ngModel)]="tr69ParamField" placeholder="key" />
+            </md-form-field>
+            <button md-raised-button (click)="getTr69Param()" color="primary">Get Param</button>
+        </md-card-content>
+
+        <md-card-content>
+            <md-form-field>
+                <input mdInput [(ngModel)]="deviceTypeField" placeholder="Device Type" />
+            </md-form-field>
+            <button md-raised-button (click)="getDeviceType()" color="primary">Get Param</button>
+        </md-card-content>
+    </md-card>
+</div>
