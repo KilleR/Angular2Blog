@@ -4,12 +4,18 @@ import {BlogComponent} from "../blog/blog.component";
 import {PageNotFoundComponent} from "../page-not-found/page-not-found.component";
 import {CryptComponent} from "../crypt/crypt.component";
 import {MephalaTestComponent} from "../mephala-test/mephala-test.component";
+import {LogisticsComponent} from "../logistics/logistics.component";
 
 const routes: Routes = [
     {
         path: 'crypt',
         component: CryptComponent,
         data: {title: "Crypt Test"}
+    },
+    {
+        path: 'logistics',
+        component: LogisticsComponent,
+        data: {title: "Logistics Tools"}
     },
     {
         path: 'mephala',

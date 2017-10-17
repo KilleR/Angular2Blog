@@ -19,6 +19,7 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {CryptComponent} from './crypt/crypt.component';
 import {CryptActivityComponent} from './crypt-activity/crypt-activity.component';
 import { MephalaTestComponent } from './mephala-test/mephala-test.component';
+import { LogisticsComponent } from './logistics/logistics.component';
 
 @NgModule({
     declarations: [
@@ -29,6 +30,7 @@ import { MephalaTestComponent } from './mephala-test/mephala-test.component';
         CryptComponent,
         CryptActivityComponent,
         MephalaTestComponent,
+        LogisticsComponent,
     ],
     imports: [
         BrowserModule,

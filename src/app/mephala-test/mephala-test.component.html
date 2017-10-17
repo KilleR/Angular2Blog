@@ -26,10 +26,25 @@
         </md-card-content>
 
         <md-card-content>
-            <md-form-field>
-                <input mdInput [(ngModel)]="deviceTypeField" placeholder="Device Type" />
-            </md-form-field>
-            <button md-raised-button (click)="getDeviceType()" color="primary">Get Param</button>
+            <md-select [(ngModel)]="deviceTypeField" placeholder="Device Type ID">
+                <md-option *ngFor="let type of deviceTypes" [value]="type.value">{{type.name}}</md-option>
+            </md-select>
+            <button md-raised-button (click)="getDeviceType()" color="primary">Get Device</button>
+
+            <div>
+                <md-select [(ngModel)]="deviceTypeParamConn" placeholder="Connection Type">
+                    <md-option value="0">Both</md-option>
+                    <md-option value="1">ADSL</md-option>
+                    <md-option value="2">VDSL</md-option>
+                </md-select>
+                <md-form-field>
+                    <input mdInput [(ngModel)]="deviceTypeParamName" placeholder="Alias (eg 'hecerrors')" />
+                </md-form-field>
+                <md-form-field>
+                    <input mdInput [(ngModel)]="deviceTypeParamValue" placeholder="Parameter String" />
+                </md-form-field>
+                <button md-raised-button (click)="setDeviceParam()" color="primary">Set Param</button>
+            </div>
         </md-card-content>
     </md-card>
 </div>

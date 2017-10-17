@@ -1,0 +1,60 @@
+<div class="route-content">
+    <md-card>
+        <md-toolbar>
+            Router Orders
+        </md-toolbar>
+
+        <md-card-content>
+            <md-input-container>
+                <input mdInput [(ngModel)]="serialNumber" placeholder="Serial Number" />
+            </md-input-container>
+            <button md-raised-button (click)="getDeviceDetails()" color="primary">Check Details</button>
+        </md-card-content>
+
+        <md-card-content *ngIf="router">
+            <div>Router ID: {{router.routerId}}</div>
+            <div>Order ID: {{router.orderId}}</div>
+            <div>Device Type: {{router.deviceType}}</div>
+            <div>Order Date: {{router.orderDate}}</div>
+            <div>Serial: {{router.serial}}</div>
+            <div>MAC: {{router.mac}}</div>
+
+            <md-table #table [dataSource]="routerDataSource">
+                <!-- Position Column -->
+                <ng-container mdColumnDef="position">
+                    <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+                    <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container mdColumnDef="position">
+                    <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+                    <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container mdColumnDef="position">
+                    <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+                    <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container mdColumnDef="position">
+                    <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+                    <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container mdColumnDef="position">
+                    <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+                    <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+                </ng-container>
+                <!-- Position Column -->
+                <ng-container mdColumnDef="position">
+                    <md-header-cell *mdHeaderCellDef> No. </md-header-cell>
+                    <md-cell *mdCellDef="let element"> {{element.position}} </md-cell>
+                </ng-container>
+
+
+                <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+                <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+            </md-table>
+        </md-card-content>
+    </md-card>
+</div>
