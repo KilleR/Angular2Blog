@@ -5,11 +5,11 @@ import {HttpModule} from "@angular/http";
 
 import {AppComponent} from "./app.component";
 import {
-    MdAutocompleteModule,
-    MdButtonModule, MdCardModule, MdGridListModule, MdIconModule, MdInputModule, MdListModule, MdProgressBarModule,
-    MdSelectModule,
-    MdSidenavModule, MdTableModule,
-    MdToolbarModule
+    MatAutocompleteModule,
+    MatButtonModule, MatCardModule, MatGridListModule, MatIconModule, MatInputModule, MatListModule, MatProgressBarModule,
+    MatSelectModule,
+    MatSidenavModule, MatTableModule,
+    MatToolbarModule
 } from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {PostComponent} from './post/post.component';
@@ -46,18 +46,18 @@ import { UnitComponent } from './army-builder/unit/unit.component';
         FormsModule,
         HttpModule,
         AppRoutingModule,
-        MdToolbarModule,
-        MdButtonModule,
-        MdInputModule,
-        MdCardModule,
-        MdProgressBarModule,
-        MdIconModule,
-        MdSidenavModule,
-        MdListModule,
-        MdSelectModule,
-        MdAutocompleteModule,
-        MdGridListModule,
-        MdTableModule
+        MatToolbarModule,
+        MatButtonModule,
+        MatInputModule,
+        MatCardModule,
+        MatProgressBarModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        MatSelectModule,
+        MatAutocompleteModule,
+        MatGridListModule,
+        MatTableModule
     ],
     providers: [],
     bootstrap: [AppComponent]

@@ -12,7 +12,7 @@
 }
 
 .sidenav-container-fill .mat-sidenav-content,
-.sidenav-container-fill md-sidenav {
+.sidenav-container-fill mat-sidenav {
     /*display: flex;*/
     /*overflow: visible;*/
 }

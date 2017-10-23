@@ -1,7 +1,7 @@
 <div class="route-content">
     Let's get sassy
-    <button md-raised-button (click)="startActivity()" color="accent">Go!</button>
-    <button md-raised-button (click)="stopActivity()" color="warn">Stop</button>
+    <button mat-raised-button (click)="startActivity()" color="accent">Go!</button>
+    <button mat-raised-button (click)="stopActivity()" color="warn">Stop</button>
 
     <app-crypt-activity *ngFor="let activity of activities" [activity]="activity"></app-crypt-activity>
 </div>

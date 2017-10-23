@@ -1,18 +1,18 @@
-<md-card>
-    <button md-mini-fab color="warn" class="card-delete-fab" (click)="detachment.delete()">
-        <md-icon>delete</md-icon>
+<mat-card>
+    <button mat-mini-fab color="warn" class="card-delete-fab" (click)="detachment.delete()">
+        <mat-icon>delete</mat-icon>
     </button>
 
-    <md-card-title>
-        <md-toolbar [color]="detachment.valid ? '' : 'warn'">
+    <mat-card-title>
+        <mat-toolbar [color]="detachment.valid ? '' : 'warn'">
             <span>{{detachment.Name}}</span>
             <div class="spacer"></div>
             <span>CP: {{detachment.CP}} | Cost: {{detachment.cost}}</span>
 
-        </md-toolbar>
-    </md-card-title>
+        </mat-toolbar>
+    </mat-card-title>
 
-    <md-card-content>
+    <mat-card-content>
         <app-detachment-section [unitOptions]="armyList.HQ" [section]="detachment.HQ"></app-detachment-section>
         <app-detachment-section [unitOptions]="armyList.Troops" [section]="detachment.Troops"></app-detachment-section>
         <app-detachment-section [unitOptions]="armyList.Elites" [section]="detachment.Elites"></app-detachment-section>
@@ -22,5 +22,5 @@
         <app-detachment-section [unitOptions]="armyList.Fliers" [section]="detachment.Fliers"></app-detachment-section>
         <app-detachment-section [unitOptions]="armyList.LordOfWar" [section]="detachment.LordOfWar"></app-detachment-section>
         <app-detachment-section [unitOptions]="armyList.Fortifications" [section]="detachment.Fortifications"></app-detachment-section>
-    </md-card-content>
-</md-card>
+    </mat-card-content>
+</mat-card>

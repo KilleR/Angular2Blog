@@ -1,157 +1,157 @@
-<md-card *ngIf="section.max > 0 || section.min > 0">
-    <md-toolbar>
+<mat-card *ngIf="section.max > 0 || section.min > 0">
+    <mat-toolbar>
         <span>{{section.name}}</span>
         <span>({{section.min}} - {{section.max}})</span>
-        <button *ngIf="!section.valid" md-icon-button color="warn">
-            <md-icon>warning</md-icon>
+        <button *ngIf="!section.valid" mat-icon-button color="warn">
+            <mat-icon>warning</mat-icon>
         </button>
 
         <div class="spacer"></div>
         <span>Cost: {{section.cost}}</span>
-    </md-toolbar>
+    </mat-toolbar>
 
-    <md-card-content>
-        <md-select [(ngModel)]="selectedUnit" placeholder="Select a unit">
-            <md-option *ngFor="let option of unitOptions" [value]="option">
+    <mat-card-content>
+        <mat-select [(ngModel)]="selectedUnit" placeholder="Select a unit">
+            <mat-option *ngFor="let option of unitOptions" [value]="option">
                 {{option.name}}
-            </md-option>
-        </md-select>
-        <button color="primary" md-icon-button="" (click)="addUnit()">
-            <md-icon>add_circle</md-icon>
+            </mat-option>
+        </mat-select>
+        <button color="primary" mat-icon-button="" (click)="addUnit()">
+            <mat-icon>add_circle</mat-icon>
         </button>
-    </md-card-content>
+    </mat-card-content>
 
     <app-unit></app-unit>
-    <md-card-content *ngFor="let unit of section.units">
-        <md-card-title>
+    <mat-card-content *ngFor="let unit of section.units">
+        <mat-card-title>
             <span>{{unit.name}}</span>
-        </md-card-title>
+        </mat-card-title>
 
-        <md-table #table [dataSource]="unit.dataSource">
+        <mat-table #table [dataSource]="unit.dataSource">
             <!-- Number Column -->
-            <ng-container mdColumnDef="count">
-                <md-header-cell *mdHeaderCellDef [ngClass]=""> Count </md-header-cell>
-                <md-cell *mdCellDef="let element">
-                    <button color="primary" md-icon-button [disabled]="element.count <= element.min" (click)="element.count = element.count - 1">
-                        <md-icon>remove_circle</md-icon>
+            <ng-container matColumnDef="count">
+                <mat-header-cell *matHeaderCellDef [ngClass]=""> Count </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button color="primary" mat-icon-button [disabled]="element.count <= element.min" (click)="element.count = element.count - 1">
+                        <mat-icon>remove_circle</mat-icon>
                     </button>
                     {{element.count}}
-                    <button color="primary" md-icon-button [disabled]="element.count >= element.max" (click)="element.count = element.count + 1">
-                        <md-icon>add_circle</md-icon>
+                    <button color="primary" mat-icon-button [disabled]="element.count >= element.max" (click)="element.count = element.count + 1">
+                        <mat-icon>add_circle</mat-icon>
                     </button>
-                </md-cell>
+                </mat-cell>
             </ng-container>
             <!-- Name Column -->
-            <ng-container mdColumnDef="name">
-                <md-header-cell *mdHeaderCellDef [ngClass]=""> Name </md-header-cell>
-                <md-cell *mdCellDef="let element">{{element.name}}</md-cell>
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef [ngClass]=""> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
             </ng-container>
             <!-- Movement Column -->
-            <ng-container mdColumnDef="movement">
-                <md-header-cell *mdHeaderCellDef> MV </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.movement}}" </md-cell>
+            <ng-container matColumnDef="movement">
+                <mat-header-cell *matHeaderCellDef> MV </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.movement}}" </mat-cell>
             </ng-container>
             <!-- BS Column -->
-            <ng-container mdColumnDef="bs">
-                <md-header-cell *mdHeaderCellDef> BS </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.bs}}+ </md-cell>
+            <ng-container matColumnDef="bs">
+                <mat-header-cell *matHeaderCellDef> BS </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.bs}}+ </mat-cell>
             </ng-container>
             <!-- WS Column -->
-            <ng-container mdColumnDef="ws">
-                <md-header-cell *mdHeaderCellDef> WS </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.ws}}+ </md-cell>
+            <ng-container matColumnDef="ws">
+                <mat-header-cell *matHeaderCellDef> WS </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.ws}}+ </mat-cell>
             </ng-container>
             <!-- Strength Column -->
-            <ng-container mdColumnDef="strength">
-                <md-header-cell *mdHeaderCellDef> S </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.strength}} </md-cell>
+            <ng-container matColumnDef="strength">
+                <mat-header-cell *matHeaderCellDef> S </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.strength}} </mat-cell>
             </ng-container>
             <!-- Toughness Column -->
-            <ng-container mdColumnDef="toughness">
-                <md-header-cell *mdHeaderCellDef> T </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.toughness}} </md-cell>
+            <ng-container matColumnDef="toughness">
+                <mat-header-cell *matHeaderCellDef> T </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.toughness}} </mat-cell>
             </ng-container>
             <!-- Wounds Column -->
-            <ng-container mdColumnDef="wounds">
-                <md-header-cell *mdHeaderCellDef> W </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.wounds}} </md-cell>
+            <ng-container matColumnDef="wounds">
+                <mat-header-cell *matHeaderCellDef> W </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.wounds}} </mat-cell>
             </ng-container>
             <!-- Attacks Column -->
-            <ng-container mdColumnDef="attacks">
-                <md-header-cell *mdHeaderCellDef> WS </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.attacks}} </md-cell>
+            <ng-container matColumnDef="attacks">
+                <mat-header-cell *matHeaderCellDef> WS </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.attacks}} </mat-cell>
             </ng-container>
             <!-- Save Column -->
-            <ng-container mdColumnDef="save">
-                <md-header-cell *mdHeaderCellDef> Sv </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.save}}+ </md-cell>
+            <ng-container matColumnDef="save">
+                <mat-header-cell *matHeaderCellDef> Sv </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.save}}+ </mat-cell>
             </ng-container>
             <!-- Leadership Column -->
-            <ng-container mdColumnDef="leadership">
-                <md-header-cell *mdHeaderCellDef> Ld </md-header-cell>
-                <md-cell *mdCellDef="let element"> {{element.leadership}} </md-cell>
+            <ng-container matColumnDef="leadership">
+                <mat-header-cell *matHeaderCellDef> Ld </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.leadership}} </mat-cell>
             </ng-container>
 
-            <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
-            <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
-        </md-table>
-    </md-card-content>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+    </mat-card-content>
 
-    <!--<md-card-content>-->
-        <!--<md-table #table [dataSource]="section.unitsDataSource">-->
+    <!--<mat-card-content>-->
+        <!--<mat-table #table [dataSource]="section.unitsDataSource">-->
             <!--&lt;!&ndash; Name Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="name">-->
-                <!--<md-header-cell *mdHeaderCellDef [ngClass]=""> Name </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.name}} ({{element.models[0].count}}) </md-cell>-->
+            <!--<ng-container matColumnDef="name">-->
+                <!--<mat-header-cell *matHeaderCellDef [ngClass]=""> Name </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.name}} ({{element.models[0].count}}) </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Movement Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="movement">-->
-                <!--<md-header-cell *mdHeaderCellDef> MV </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.models[0].movement}}" </md-cell>-->
+            <!--<ng-container matColumnDef="movement">-->
+                <!--<mat-header-cell *matHeaderCellDef> MV </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.models[0].movement}}" </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; BS Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="bs">-->
-                <!--<md-header-cell *mdHeaderCellDef> BS </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.bs}}+ </md-cell>-->
+            <!--<ng-container matColumnDef="bs">-->
+                <!--<mat-header-cell *matHeaderCellDef> BS </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.bs}}+ </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; WS Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="ws">-->
-                <!--<md-header-cell *mdHeaderCellDef> WS </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.ws}}+ </md-cell>-->
+            <!--<ng-container matColumnDef="ws">-->
+                <!--<mat-header-cell *matHeaderCellDef> WS </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.ws}}+ </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Strength Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="strength">-->
-                <!--<md-header-cell *mdHeaderCellDef> S </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.strength}} </md-cell>-->
+            <!--<ng-container matColumnDef="strength">-->
+                <!--<mat-header-cell *matHeaderCellDef> S </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.strength}} </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Toughness Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="toughness">-->
-                <!--<md-header-cell *mdHeaderCellDef> T </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.toughness}} </md-cell>-->
+            <!--<ng-container matColumnDef="toughness">-->
+                <!--<mat-header-cell *matHeaderCellDef> T </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.toughness}} </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Wounds Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="wounds">-->
-                <!--<md-header-cell *mdHeaderCellDef> W </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.wounds}} </md-cell>-->
+            <!--<ng-container matColumnDef="wounds">-->
+                <!--<mat-header-cell *matHeaderCellDef> W </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.wounds}} </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Attacks Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="attacks">-->
-                <!--<md-header-cell *mdHeaderCellDef> WS </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.attacks}} </md-cell>-->
+            <!--<ng-container matColumnDef="attacks">-->
+                <!--<mat-header-cell *matHeaderCellDef> WS </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.attacks}} </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Save Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="save">-->
-                <!--<md-header-cell *mdHeaderCellDef> Sv </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.save}}+ </md-cell>-->
+            <!--<ng-container matColumnDef="save">-->
+                <!--<mat-header-cell *matHeaderCellDef> Sv </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.save}}+ </mat-cell>-->
             <!--</ng-container>-->
             <!--&lt;!&ndash; Leadership Column &ndash;&gt;-->
-            <!--<ng-container mdColumnDef="leadership">-->
-                <!--<md-header-cell *mdHeaderCellDef> Ld </md-header-cell>-->
-                <!--<md-cell *mdCellDef="let element"> {{element.leadership}} </md-cell>-->
+            <!--<ng-container matColumnDef="leadership">-->
+                <!--<mat-header-cell *matHeaderCellDef> Ld </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element"> {{element.leadership}} </mat-cell>-->
             <!--</ng-container>-->
 
-            <!--<md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>-->
-            <!--<md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>-->
-        <!--</md-table>-->
-    <!--</md-card-content>-->
-</md-card>
+            <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+            <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
+        <!--</mat-table>-->
+    <!--</mat-card-content>-->
+</mat-card>

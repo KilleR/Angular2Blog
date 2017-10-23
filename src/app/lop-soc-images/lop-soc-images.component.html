@@ -1,29 +1,29 @@
 <div class="route-content">
-    <md-card>
-        <md-card-title-group>
-            <md-card-title>
+    <mat-card>
+        <mat-card-title-group>
+            <mat-card-title>
                 Harrogate Mikado 2017
-            </md-card-title>
-            <md-card-subtitle>
+            </mat-card-title>
+            <mat-card-subtitle>
                 Backstage photos
-            </md-card-subtitle>
-        </md-card-title-group>
+            </mat-card-subtitle>
+        </mat-card-title-group>
 
-        <md-card-content>
+        <mat-card-content>
             Download a full zip here:
-            <a md-icon-button="" color="primary" href="assets/images/lopsoc/lopsoc.zip">
-                <md-icon>cloud_download</md-icon>
+            <a mat-icon-button="" color="primary" href="assets/images/lopsoc/lopsoc.zip">
+                <mat-icon>cloud_download</mat-icon>
             </a>
-        </md-card-content>
+        </mat-card-content>
 
-        <md-card-content>
-            <md-grid-list [cols]="gridCols">
-                <md-grid-tile *ngFor="let image of images">
+        <mat-card-content>
+            <mat-grid-list [cols]="gridCols">
+                <mat-grid-tile *ngFor="let image of images">
                     <a routerLink="{{image}}">
                         <img [src]="'assets/images/lopsoc/thumbs/'+image" />
                     </a>
-                </md-grid-tile>
-            </md-grid-list>
-        </md-card-content>
-    </md-card>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </mat-card-content>
+    </mat-card>
 </div>

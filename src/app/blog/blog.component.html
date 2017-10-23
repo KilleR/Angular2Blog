@@ -1,25 +1,25 @@
-<md-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></md-progress-bar>
+<mat-progress-bar *ngIf="loadingBarShow" [mode]="loadingBarMode"></mat-progress-bar>
 
 <div [hidden]="loggedIn">
-    <md-input-container class="input-full-width">
-        <input mdInput [ngModel]="loginField" (ngModelChange)="doLogin($event)"/>
-    </md-input-container>
+    <mat-input-container class="input-full-width">
+        <input matInput [ngModel]="loginField" (ngModelChange)="doLogin($event)"/>
+    </mat-input-container>
 </div>
 
 <div [hidden]="!loggedIn">
     <form class="post-form" (submit)="addPost()" #postForm="ngForm">
-        <md-input-container class="input-full-width">
-            <input mdInput [(ngModel)]="newPost.title" name="title" placeholder="Title" required/>
-        </md-input-container>
-        <md-input-container class="input-full-width">
-            <textarea mdInput mdTextareaAutosize [(ngModel)]="newPost.content" name="content"
+        <mat-input-container class="input-full-width">
+            <input matInput [(ngModel)]="newPost.title" name="title" placeholder="Title" required/>
+        </mat-input-container>
+        <mat-input-container class="input-full-width">
+            <textarea matInput matTextareaAutosize [(ngModel)]="newPost.content" name="content"
                       placeholder="Post New Update" required></textarea>
-        </md-input-container>
-        <md-input-container class="input-full-width">
-            <input mdInput type="number" name="rating" [(ngModel)]="newPost.rating" name="rating"
+        </mat-input-container>
+        <mat-input-container class="input-full-width">
+            <input matInput type="number" name="rating" [(ngModel)]="newPost.rating" name="rating"
                    placeholder="Rate the day" required/>
-        </md-input-container>
-        <button type="submit" md-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
+        </mat-input-container>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!postForm.form.valid">New Post</button>
     </form>
 
     <blog-post [post]="newPost"></blog-post>
