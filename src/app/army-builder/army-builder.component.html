@@ -6,11 +6,13 @@
             <span>CP: {{army.CP}} |</span>
             <span>Cost: {{army.cost}}</span>
         </mat-toolbar>
-        <mat-select [(ngModel)]="armyList" placeholder="Select Army" floatPlaceholder="never">
-            <mat-option *ngFor="let list of armyLists" [value]="list">
-                {{list.Name}}
-            </mat-option>
-        </mat-select>
+        <mat-input-container>
+            <mat-select [(ngModel)]="armyList" placeholder="Select Army" floatPlaceholder="never">
+                <mat-option *ngFor="let list of armyLists" [value]="list">
+                    {{list.Name}}
+                </mat-option>
+            </mat-select>
+        </mat-input-container>
     </mat-card>
 
     <mat-card *ngIf="armyList">
@@ -21,11 +23,13 @@
         </mat-card-title>
 
         <mat-card-content>
-            <mat-select [(ngModel)]="selectedDetachment" placeholder="Select a detachment">
-                <mat-option *ngFor="let option of detachmentOptions" [value]="option">
-                    {{option.Name}}
-                </mat-option>
-            </mat-select>
+            <mat-input-container>
+                <mat-select [(ngModel)]="selectedDetachment" placeholder="Select a detachment">
+                    <mat-option *ngFor="let option of detachmentOptions" [value]="option">
+                        {{option.Name}}
+                    </mat-option>
+                </mat-select>
+            </mat-input-container>
             <button mat-icon-button="" (click)="addDetachment()">
                 <mat-icon>library_add</mat-icon>
             </button>

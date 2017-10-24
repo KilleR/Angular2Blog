@@ -11,17 +11,18 @@
     </mat-toolbar>
 
     <mat-card-content>
-        <mat-select [(ngModel)]="selectedUnit" placeholder="Select a unit">
-            <mat-option *ngFor="let option of unitOptions" [value]="option">
-                {{option.name}}
-            </mat-option>
-        </mat-select>
+        <mat-input-container>
+            <mat-select [(ngModel)]="selectedUnit" placeholder="Select a unit">
+                <mat-option *ngFor="let option of unitOptions" [value]="option">
+                    {{option.name}}
+                </mat-option>
+            </mat-select>
+        </mat-input-container>
         <button color="primary" mat-icon-button="" (click)="addUnit()">
             <mat-icon>add_circle</mat-icon>
         </button>
     </mat-card-content>
 
-    <app-unit></app-unit>
     <mat-card-content *ngFor="let unit of section.units">
         <mat-card-title>
             <span>{{unit.name}}</span>
